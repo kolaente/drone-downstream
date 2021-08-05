@@ -203,7 +203,7 @@ func (p *Plugin) Execute() error {
 						if waiting {
 							continue
 						}
-						return fmt.Errorf("unable to trigger build for %s", entry)
+						return fmt.Errorf("unable to trigger build for %s: %v", entry, err)
 					}
 					fmt.Printf("Restarting build %d for %s\n", build.Number, entry)
 					logParams(p.settings.params, p.settings.ParamsEnv.Value())
